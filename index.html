@@ -1,116 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OmniLearn // AI Curriculum & Roadmap Engine</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniLearn // AI Curriculum & Roadmap Architect</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <header class="top-nav">
+    <div class="brand">
+      <div class="logo-dot"></div>
+      <span>OmniLearn</span>
+    </div>
+    <div class="nav-status">
+      <span id="active-model-display">Gemini 2.5 Flash // Standby</span>
+    </div>
+  </header>
 
-  <div class="ambient-glow orb-1"></div>
-  <div class="ambient-glow orb-2"></div>
-  <div class="noise-grid"></div>
+  <main class="container">
+    <section class="hero-section">
+      <h1 id="roadmap-title">Universal AI Roadmap Architect</h1>
+      <p id="roadmap-subtitle">Specify any academic, technical, or creative field to generate an adaptive, fully fleshed-out curriculum.</p>
 
-  <main class="app-viewport">
-    <header class="app-header">
-      <div class="model-badge">
-        <span class="active-dot"></span>
-        <span id="active-model-display">Gemini 1.5 Pro // Synthesizer Ready</span>
-      </div>
-      <h1 id="roadmap-heading">Universal AI Roadmap Architect</h1>
-      <p class="subtitle" id="roadmap-sub">Specify any academic, technical, or creative field to generate an adaptive, fully fleshed-out curriculum.</p>
-    </header>
-
-    <section class="prompt-engine">
-      <form id="roadmap-form" class="ai-prompt-box">
-        <div class="control-strip">
-          <div class="selector-group">
-            <label for="model-select">AI Inference Model</label>
+      <form id="search-form" class="controls-card">
+        <div class="selectors-row">
+          <div class="select-group">
+            <label for="model-select">AI INFERENCE MODEL</label>
             <select id="model-select">
-              <option value="gemini-pro">Gemini 1.5 Pro (Adaptive Multimodal)</option>
-              <option value="gpt-4o">GPT-4o (Reasoning & Depth)</option>
-              <option value="claude-sonnet">Claude 3.5 Sonnet (Structured Pedagogic)</option>
-              <option value="deepseek-v3">DeepSeek V3 (First-Principles Logic)</option>
+              <option value="gemini-2.5-flash">Gemini 2.5 Flash (Adaptive Multimodal)</option>
             </select>
           </div>
-
-          <div class="selector-group">
-            <label for="depth-select">Target Depth</label>
+          <div class="select-group">
+            <label for="depth-select">TARGET DEPTH</label>
             <select id="depth-select">
               <option value="Standard">Standard (Core Principles)</option>
-              <option value="Deep">Comprehensive Deep Dive</option>
-              <option value="Accelerated">Accelerated Crash Course</option>
+              <option value="Comprehensive">Comprehensive (Deep Dive)</option>
+              <option value="Accelerated">Accelerated (Crash Course)</option>
             </select>
           </div>
         </div>
 
         <div class="input-row">
-          <div class="input-wrapper">
-            <input 
-              type="text" 
-              id="prompt-input" 
-              placeholder="Ask anything: e.g. Quantum Computing, International Arbitration, Film Directing, Bio-Organic Chemistry..." 
-              autocomplete="off"
-              required
-            />
-          </div>
-          <button type="submit" class="generate-btn" id="submit-btn">
+          <input type="text" id="prompt-input" placeholder="e.g. Full-Stack Web Development, Astrophysics, Rust..." required autocomplete="off" />
+          <button type="submit" id="submit-btn">
             <span class="btn-text">Generate Blueprint</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
+            <span class="btn-icon">➔</span>
           </button>
         </div>
       </form>
     </section>
 
-    <section class="telemetry-bar">
-      <div class="telemetry-labels">
-        <span class="label-title">Curriculum Progress</span>
-        <span class="stat-count" id="completion-text">0% Completed (0/3 Modules)</span>
-      </div>
-      <div class="progress-track">
-        <div class="progress-fill" id="progress-bar"></div>
-      </div>
+    <section class="progress-section">
+      <div id="progress-text">0% Completed (0/0 Modules)</div>
     </section>
 
-    <section class="roadmap-spine" id="roadmap-container"></section>
+    <section id="roadmap-container" class="timeline-container">
+      <!-- Roadmap nodes injected dynamically via script.js -->
+    </section>
   </main>
-
-  <aside class="modal-overlay" id="detail-modal">
-    <div class="modal-window">
-      <button class="modal-close" id="close-modal">&times;</button>
-      <div class="modal-header">
-        <span class="modal-phase" id="modal-phase">Milestone 01</span>
-        <h2 id="modal-title">Module Title</h2>
-        <span class="modal-duration" id="modal-duration">Estimated: 4 Weeks</span>
-      </div>
-      <div class="modal-body">
-        <section class="modal-section">
-          <h3>Core Theoretical Framework</h3>
-          <p id="modal-overview">Detailed overview goes here.</p>
-        </section>
-        <section class="modal-section">
-          <h3>Essential Learning Modules</h3>
-          <ul id="modal-topics" class="detail-list"></ul>
-        </section>
-        <section class="modal-section">
-          <h3>Practical Applications & Projects</h3>
-          <p id="modal-project" class="project-box"></p>
-        </section>
-        <section class="modal-section">
-          <h3>Recommended Primary Sources & Literature</h3>
-          <div id="modal-resources" class="tag-row"></div>
-        </section>
-      </div>
-    </div>
-  </aside>
 
   <script src="script.js"></script>
 </body>
