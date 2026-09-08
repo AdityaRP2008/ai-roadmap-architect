@@ -206,7 +206,8 @@ roadmapForm.addEventListener("submit", async (e) => {
     });
 
     if (!response.ok) {
-      throw new Error(`Server error: ${response.status}`);
+      const errData = await response.json().catch(() => ({}));
+      throw new Error(errData.error || errData.details || `Server returned status ${response.status}`);
     }
 
     const data = await response.json();
@@ -223,8 +224,7 @@ roadmapForm.addEventListener("submit", async (e) => {
 
   } catch (err) {
     console.error("Roadmap generation error:", err);
-    alert("Could not connect to backend server. Make sure your local server is running on http://localhost:5000.");
-    activeModelDisplay.innerText = "System Idle // Generation Error";
+    alert(`Generation failed: ${err.message}`);
   } finally {
     // 5. Reset button state
     submitBtn.disabled = false;
