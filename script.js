@@ -195,7 +195,7 @@ roadmapForm.addEventListener("submit", async (e) => {
 
   try {
     // 2. Fetch from backend API
-    const response = await fetch("http://localhost:5000/api/generate-roadmap", {
+    const response = await fetch("/api/generate-roadmap", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
