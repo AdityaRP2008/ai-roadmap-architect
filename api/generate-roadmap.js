@@ -77,7 +77,8 @@ export default async function handler(req, res) {
     4. Provide recognized, real canonical literature, books, or papers in "resources".
     5. Set "completed" to false for all milestones.
   `;
-try {
+
+  try {
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: prompt,
@@ -88,9 +89,6 @@ try {
       }
     });
 
-    const parsedData = JSON.parse(response.text.trim());
-    return res.status(200).json(parsedData);
-  }
     const parsedData = JSON.parse(response.text.trim());
     return res.status(200).json(parsedData);
   } catch (error) {
