@@ -2,8 +2,5 @@
   "name": "ai-roadmap-architect",
   "version": "1.0.0",
   "type": "module",
-  "private": true,
-  "dependencies": {
-    "@google/genai": "latest"
-  }
+  "private": true
 }
