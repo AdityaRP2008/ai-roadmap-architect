@@ -48,7 +48,7 @@ Return ONLY raw JSON with this exact schema (no markdown, no backticks):
 Generate between 3 to 5 nodes.`;
 
   try {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
     const geminiRes = await fetch(url, {
       method: 'POST',
